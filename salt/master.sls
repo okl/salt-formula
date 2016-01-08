@@ -2,10 +2,8 @@
 
 pip2.6-jinja2-upgrade:
   pip.installed:
-    - name: jinja2 > 2.7
-    - pip_bin: "/usr/bin/pip2.6"
-    - require:
-     - pkg: python-pip
+    - name: jinja2 >= 2.7
+    - pip_bin: /usr/bin/pip2.6
  
 
 salt-master:
