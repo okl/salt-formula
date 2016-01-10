@@ -11,6 +11,8 @@
     - group: root
     - file_mode: 0400
     - contents_pillar: 'salt:master:master_pub'
+    - watch_in:
+      - service: salt-master
 {% endif %}
 
 {% if salt['pillar.get']('salt:master:master_pem') is defined %}
@@ -20,6 +22,8 @@
     - group: root
     - file_mode: 0400
     - contents_pillar: 'salt:master:master_pem'
+    - watch_in:
+      - service: salt-master
 {% endif %}
 
 {% if salt['pillar.get']('salt:master:master_sign_pub') is defined %}
@@ -29,6 +33,8 @@
     - group: root
     - file_mode: 0400
     - contents_pillar: 'salt:master:master_sign_pub'
+    - watch_in:
+      - service: salt-master
 {% endif %}
 
 {% if salt['pillar.get']('salt:master:master_sign_pem') is defined %}
@@ -38,4 +44,6 @@
     - group: root
     - file_mode: 0400
     - contents_pillar: 'salt:master:master_sign_pem'
+    - watch_in:
+      - service: salt-master
 {% endif %}
