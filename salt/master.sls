@@ -2,7 +2,7 @@
 
 pip2.6-jinja2-upgrade:
   pip.installed:
-    - name: jinja2 >= 2.7
+    - name: jinja2 >= 2.8
     - pip_bin: /usr/bin/pip2.6
  
 
@@ -16,7 +16,7 @@ salt-master:
     - template: jinja
     - source: salt://{{ slspath }}/files/master.d
     - clean: {{ salt_settings.clean_config_d_dir }}
-    - exclude_pat: _*
+    - exclude_path: _*
   service.running:
     - enable: True
     - name: {{ salt_settings.master_service }}
