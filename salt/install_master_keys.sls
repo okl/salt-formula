@@ -1,3 +1,9 @@
+/etc/salt/pki/master:
+  file.directory:
+  - user: root
+  - group: root
+  - dir_mode: 0700
+    
 {% if salt['pillar.get']('salt:master:master_pub') is defined %}
 /etc/salt/pki/master/master.pub:
   file.managed:
