@@ -24,8 +24,15 @@ salt-master:
 {% if salt_settings.install_packages %}
       - pkg: salt-master
 {% endif %}
+      - file: /etc/salt/pki/master/master.pub
+      - file: /etc/salt/pki/master/master.pem
+      - file: /etc/salt/pki/master/master_sign.pub
+      - file: /etc/salt/pki/master/master_sign.pem
       - file: salt-master
       - file: remove-old-master-conf-file
+
+include:
+ - salt.install_master_keys
 
 # clean up old _defaults.conf file if they have it around
 remove-old-master-conf-file:
