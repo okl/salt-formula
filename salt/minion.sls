@@ -1,8 +1,5 @@
 {% from "salt/map.jinja" import salt_settings with context %}
 
-include:
- - salt.install_master_signing_public_key
-
 salt-minion:
 {% if salt_settings.install_packages %}
   pkg.installed:
