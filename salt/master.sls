@@ -1,11 +1,5 @@
 {% from "salt/map.jinja" import salt_settings with context %}
 
-pip2.6-jinja2-upgrade:
-  pip.installed:
-    - name: jinja2 >= 2.8
-    - pip_bin: /usr/bin/pip2.6
- 
-
 salt-master:
 {% if salt_settings.install_packages %}
   pkg.installed:
